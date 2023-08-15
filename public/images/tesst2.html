@@ -1,0 +1,1408 @@
+<!doctype html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="apple-touch-icon" sizes="180x180"
+		href="https://www.mailpoet.com/wp-content/themes/theme-2018/assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32"
+		href="https://www.mailpoet.com/wp-content/themes/theme-2018/assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="https://www.mailpoet.com/wp-content/themes/theme-2018/assets/favicon/favicon-16x16.png">
+	<style>
+		.bg-img--delivered-on-time {
+			background-image: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/bg-imgs/home.png");
+		}
+
+		.bg-img--delivery-infrastructure {
+			background-image: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/bg-imgs/delivery.png");
+		}
+
+		.bg-img--switching {
+			background-image: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/bg-imgs/features.png");
+		}
+
+		.bg-img--woocommerce1 {
+			background-image: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/bg-imgs/woocommerce1.png");
+		}
+
+		.bg-img--woocommerce2 {
+			background-image: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/bg-imgs/woocommerce2.png");
+		}
+
+		.happiness-score {
+			background-image: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/img/stats.png");
+		}
+
+		.checkmark::before {
+			content: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/icons/checkmark.svg");
+		}
+
+		.checkmark.close::before {
+			content: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/icons/close.svg");
+		}
+
+		a.with-arrow::after {
+			content: url("https://www.mailpoet.com/wp-content/themes/theme-2018/assets/icons/arrow-orange.svg");
+		}
+	</style>
+	<script>
+		function getCookie(name) {
+			const cookieName = `${encodeURIComponent(name)}=`;
+			const cookie = document.cookie;
+			let value = null;
+
+			const startIndex = cookie.indexOf(cookieName);
+			if (startIndex > -1) {
+				let endIndex = cookie.indexOf(';', startIndex);
+				if (endIndex == -1) {
+					endIndex = cookie.length;
+				}
+				value = decodeURIComponent(cookie.substring(startIndex + name.length + 1, endIndex));
+			}
+			return value;
+		}
+
+		function setCookie(name, value, expiryDays) {
+			const domainParts = window.location.hostname.split('.');
+			const domain = domainParts.slice(Math.max(domainParts.length - 2, 0)).join('.');
+
+			const DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+			let expires = '';
+			if (expiryDays) {
+				const date = new Date();
+				date.setTime(date.getTime() + (expiryDays * DAY_IN_MILLISECONDS));
+				expires = `expires=${date.toUTCString()}; `;
+			}
+
+			document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; ${expires} ; Path=/; Domain=${domain}`;
+		}
+
+		function deleteCookie(name) {
+			setCookie(name, null, -99999);
+		}
+	</script>
+
+	<script type="text/javascript">
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'page_name': '/ga-virtual/homepage',
+			'site_section': 'main site',
+			'login_status': 'logged out',
+		});
+	</script>
+
+
+
+
+
+	<script>
+		// Define dataLayer and the gtag function.
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+
+		// Set default consent. You can find more details in README.md
+		gtag('consent', 'default', {
+			ad_storage: 'denied',
+			analytics_storage: 'granted',
+			functionality_storage: 'granted',
+			personalization_storage: 'granted',
+			security_storage: 'granted',
+		});
+
+		function trackPricingButtonClick(name, type, price, discountPrice) {
+			let finalPrice = price;
+			let id;
+			if (discountPrice) finalPrice = discountPrice;
+			if (type === 'blogger') id = '90';
+			if (type === 'freelancer') id = '89';
+			if (type === 'agency') id = '88';
+
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'visitor interaction',
+				'interaction_name': 'add to cart',
+				'add_to_cart_btn': 'buy now',
+				'add_to_cart_loc': 'premium licences page',
+				'ecommerce': {
+					'currencyCode': 'EUR',
+					'add': {
+						'products': [{
+							'name': name,
+							'id': id,
+							'variant': 'new plan',
+							'brand': 'unlimited',
+							'category': 'yearly/paid',
+							'price': finalPrice,
+							'quantity': '1',
+						}]
+					}
+				}
+			});
+			return true;
+		}
+
+		function trackFreePlanClick() {
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'visitor interaction',
+				'interaction_name': 'add to cart',
+				'add_to_cart_btn': 'sign up for free',
+				'add_to_cart_loc': 'blog post',
+				'ecommerce': {
+					'currencyCode': 'EUR',
+					'add': {
+						'products': [{
+							'name': 'free',
+							'id': '91',
+							'variant': 'new plan',
+							'brand': '0-1000',
+							'category': 'monthly/free',
+							'price': '0.00',
+							'quantity': '1'
+						}]
+					}
+				}
+			});
+		}
+
+		function initGTM(w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+			var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		}
+
+		initGTM(window, document, 'script', 'dataLayer', 'GTM-MX5LJ9Q');
+	</script>
+
+	<link rel="preconnect" href="//use.typekit.net">
+	<link rel="preconnect" href="//p.typekit.net">
+	<link rel="dns-prefetch" href="//use.typekit.net">
+	<link rel="dns-prefetch" href="//p.typekit.net">
+	<link rel="preload" href="https://use.typekit.net/aps3nxt.css">
+
+	<link rel="preconnect" href="//i0.wp.com">
+	<link rel="preconnect" href="//stats.wp.com">
+
+	<link rel="preload" as="image"
+		href="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2022/04/L1_hero_homepage_alpha-1.png?ssl=1">
+
+	<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+	<title>MailPoet, a newsletter plugin for WordPress</title>
+	<meta name="description"
+		content="A newsletter plugin for WordPress trusted by 300,000 websites. Send newsletters, post notifications and email marketing automation for WooCommerce." />
+	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+	<link rel="canonical" href="https://www.mailpoet.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="MailPoet, a newsletter plugin for WordPress" />
+	<meta property="og:description"
+		content="A newsletter plugin for WordPress trusted by 300,000 websites. Send newsletters, post notifications and email marketing automation for WooCommerce." />
+	<meta property="og:url" content="https://www.mailpoet.com/" />
+	<meta property="og:site_name" content="MailPoet" />
+	<meta property="og:updated_time" content="2023-06-07T09:26:09+00:00" />
+	<meta property="og:image" content="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/02/mailpoet.png" />
+	<meta property="og:image:secure_url"
+		content="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/02/mailpoet.png" />
+	<meta property="og:image:width" content="781" />
+	<meta property="og:image:height" content="368" />
+	<meta property="og:image:alt" content="MailPoet" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="article:published_time" content="2018-09-25T09:25:59+00:00" />
+	<meta property="article:modified_time" content="2023-06-07T09:26:09+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="MailPoet, a newsletter plugin for WordPress" />
+	<meta name="twitter:description"
+		content="A newsletter plugin for WordPress trusted by 300,000 websites. Send newsletters, post notifications and email marketing automation for WooCommerce." />
+	<meta name="twitter:image" content="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/02/mailpoet.png" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Quentin Frery" />
+	<meta name="twitter:label2" content="Time to read" />
+	<meta name="twitter:data2" content="2 minutes" />
+	<script type="application/ld+json"
+		class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.mailpoet.com/#organization","name":"MailPoet","url":"https://www.mailpoet.com","sameAs":["https://www.facebook.com/mailpoetplugin/"],"logo":{"@type":"ImageObject","@id":"https://www.mailpoet.com/#logo","url":"https://www.mailpoet.com/wp-content/uploads/2020/05/mailpoet-symbol.png","contentUrl":"https://www.mailpoet.com/wp-content/uploads/2020/05/mailpoet-symbol.png","caption":"MailPoet","inLanguage":"en-US","width":"600","height":"600"}},{"@type":"WebSite","@id":"https://www.mailpoet.com/#website","url":"https://www.mailpoet.com","name":"MailPoet","publisher":{"@id":"https://www.mailpoet.com/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://www.mailpoet.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.mailpoet.com/wp-content/uploads/2022/04/L1_hero_homepage_alpha-1.png","url":"https://www.mailpoet.com/wp-content/uploads/2022/04/L1_hero_homepage_alpha-1.png","width":"200","height":"200","inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.mailpoet.com/#webpage","url":"https://www.mailpoet.com/","name":"MailPoet, a newsletter plugin for WordPress","datePublished":"2018-09-25T09:25:59+00:00","dateModified":"2023-06-07T09:26:09+00:00","about":{"@id":"https://www.mailpoet.com/#organization"},"isPartOf":{"@id":"https://www.mailpoet.com/#website"},"primaryImageOfPage":{"@id":"https://www.mailpoet.com/wp-content/uploads/2022/04/L1_hero_homepage_alpha-1.png"},"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.mailpoet.com/author/qfrery-frery/","name":"Quentin Frery","url":"https://www.mailpoet.com/author/qfrery-frery/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/f6687329d57c9e31748be2346ea1149c?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/f6687329d57c9e31748be2346ea1149c?s=96&amp;d=mm&amp;r=g","caption":"Quentin Frery","inLanguage":"en-US"},"worksFor":{"@id":"https://www.mailpoet.com/#organization"}},{"@type":"Article","headline":"MailPoet, a newsletter plugin for WordPress","keywords":"newsletter plugin for wordpress,wordpress newsletter plugin,wordpress email","datePublished":"2018-09-25T09:25:59+00:00","dateModified":"2023-06-07T09:26:09+00:00","author":{"@id":"https://www.mailpoet.com/author/qfrery-frery/","name":"Quentin Frery"},"publisher":{"@id":"https://www.mailpoet.com/#organization"},"description":"A newsletter plugin for WordPress trusted by 300,000 websites. Send newsletters, post notifications and email marketing automation for WooCommerce.","name":"MailPoet, a newsletter plugin for WordPress","@id":"https://www.mailpoet.com/#richSnippet","isPartOf":{"@id":"https://www.mailpoet.com/#webpage"},"image":{"@id":"https://www.mailpoet.com/wp-content/uploads/2022/04/L1_hero_homepage_alpha-1.png"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"https://www.mailpoet.com/#webpage"}}]}</script>
+	<!-- /Rank Math WordPress SEO plugin -->
+
+	<link rel='dns-prefetch' href='//stats.wp.com' />
+	<link rel='dns-prefetch' href='//use.typekit.net' />
+	<link rel='dns-prefetch' href='//c0.wp.com' />
+	<link rel='dns-prefetch' href='//i0.wp.com' />
+	<link rel="alternate" type="application/rss+xml" title="MailPoet &raquo; Feed"
+		href="https://www.mailpoet.com/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="MailPoet &raquo; Comments Feed"
+		href="https://www.mailpoet.com/comments/feed/" />
+	<script type="text/javascript">
+		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/www.mailpoet.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2" } };
+		/*! This file is auto-generated */
+		!function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { p.clearRect(0, 0, i.width, i.height), p.fillText(e, 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(t, 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (p && p.fillText) switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !s("\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff", "\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff") }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e.wpemoji))) }(window, document, window._wpemojiSettings);
+	</script>
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel='stylesheet' id='atomic-blocks-fontawesome-css'
+		href='https://www.mailpoet.com/wp-content/plugins/atomic-blocks/dist/assets/fontawesome/css/all.min.css?ver=1646060486'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='wp-block-library-css'
+		href='https://c0.wp.com/c/6.2.2/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+	<style id='wp-block-library-inline-css' type='text/css'>
+		.has-text-align-justify {
+			text-align: justify;
+		}
+	</style>
+	<link rel='stylesheet' id='atomic-blocks-style-css-css'
+		href='https://www.mailpoet.com/wp-content/plugins/atomic-blocks/dist/blocks.style.build.css?ver=1646060486'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='classic-theme-styles-css'
+		href='https://c0.wp.com/c/6.2.2/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+	<style id='global-styles-inline-css' type='text/css'>
+		body {
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--color--brand: #fe5301;
+			--wp--preset--color--orange: #f5a278;
+			--wp--preset--color--soft: #ffe0d0;
+			--wp--preset--color--blue: #3d60f2;
+			--wp--preset--color--divider: #e5e9f8;
+			--wp--preset--color--grey: #9ca6cc;
+			--wp--preset--color--dark: #071c6d;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+			--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+			--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+			--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+			--wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+			--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+			--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+			--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flow>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-flow>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-flow>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-constrained>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-constrained>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: var(--wp--style--global--content-size);
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignwide {
+			max-width: var(--wp--style--global--wide-size);
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		body .is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		body .is-layout-flex>* {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		.wp-block-navigation a:where(:not(.wp-element-button)) {
+			color: inherit;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.wp-block-pullquote {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+	</style>
+	<link rel='stylesheet' id='ghostkit-css'
+		href='https://www.mailpoet.com/wp-content/plugins/ghostkit/gutenberg/style.min.css?ver=2.25.0' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='swiper-css'
+		href='https://www.mailpoet.com/wp-content/plugins/ghostkit/assets/vendor/swiper/swiper-bundle.min.css?ver=8.4.0'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='ghostkit-block-carousel-css'
+		href='https://www.mailpoet.com/wp-content/plugins/ghostkit/gutenberg/blocks/carousel/styles/style.min.css?ver=2.25.0'
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='nmp-style-css'
+		href='https://www.mailpoet.com/wp-content/themes/theme-2018/style.min.css?ver=1.2.9' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='nmp-fonts-css' href='https://use.typekit.net/aps3nxt.css?ver=6.2.2' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='tablepress-default-css'
+		href='https://www.mailpoet.com/wp-content/tablepress-combined.min.css?ver=50' type='text/css' media='all' />
+	<style id='ghostkit-blocks-content-custom-css-inline-css' type='text/css'>
+		.logos {
+			padding-top: 180px;
+		}
+	</style>
+	<style id='ghostkit-typography-inline-css' type='text/css'>
+
+	</style>
+	<script type='text/javascript' src='https://c0.wp.com/c/6.2.2/wp-includes/js/jquery/jquery.min.js'
+		id='jquery-core-js'></script>
+	<script type='text/javascript' src='https://c0.wp.com/c/6.2.2/wp-includes/js/jquery/jquery-migrate.min.js'
+		id='jquery-migrate-js'></script>
+	<script type='text/javascript' id='nmp-scripts-js-extra'>
+		/* <![CDATA[ */
+		var modalData = { "templatesUri": "https:\/\/www.mailpoet.com\/wp-content\/themes\/theme-2018\/assets\/email-templates\/" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/themes/theme-2018/js/dist/scripts.min.js?ver=1.2.9'
+		id='nmp-scripts-js'></script>
+	<link rel="https://api.w.org/" href="https://www.mailpoet.com/wp-json/" />
+	<link rel="alternate" type="application/json" href="https://www.mailpoet.com/wp-json/wp/v2/pages/32" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.mailpoet.com/xmlrpc.php?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+		href="https://www.mailpoet.com/wp-includes/wlwmanifest.xml" />
+
+	<link rel='shortlink' href='https://www.mailpoet.com/' />
+	<link rel="alternate" type="application/json+oembed"
+		href="https://www.mailpoet.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mailpoet.com%2F" />
+	<link rel="alternate" type="text/xml+oembed"
+		href="https://www.mailpoet.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mailpoet.com%2F&#038;format=xml" />
+	<style>
+		img#wpstats {
+			display: none
+		}
+	</style>
+	<style type="text/css">
+		.ghostkit-sr-enabled [data-ghostkit-sr] {
+			pointer-events: none;
+			visibility: hidden;
+		}
+	</style>
+	<script>
+		document.documentElement.classList.add(
+			'ghostkit-sr-enabled'
+		);
+	</script>
+	<style type="text/css">
+		/* If html does not have either class, do not show lazy loaded images. */
+		html:not(.jetpack-lazy-images-js-enabled):not(.js) .jetpack-lazy-image {
+			display: none;
+		}
+	</style>
+	<script>
+		document.documentElement.classList.add(
+			'jetpack-lazy-images-js-enabled'
+		);
+	</script>
+	<link rel="icon"
+		href="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2016/04/favicon.png?fit=32%2C32&#038;ssl=1"
+		sizes="32x32" />
+	<link rel="icon"
+		href="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2016/04/favicon.png?fit=192%2C192&#038;ssl=1"
+		sizes="192x192" />
+	<link rel="apple-touch-icon"
+		href="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2016/04/favicon.png?fit=180%2C180&#038;ssl=1" />
+	<meta name="msapplication-TileImage"
+		content="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2016/04/favicon.png?fit=200%2C200&#038;ssl=1" />
+	<style type="text/css" id="wp-custom-css">
+		.site-header {
+			margin-top: 0 !important;
+		}
+
+		.cp_id_cfeac {
+			top: 82px !important;
+		}
+
+		/* Hide duplicated sign-up form on some pages (checkout, manage subscription, unsubscribe) */
+		.single #content~.signup-form-block {
+			display: none;
+		}
+	</style>
+</head>
+
+<body
+	class="home page-template page-template-page-templates page-template-full-width-page page-template-page-templatesfull-width-page-php page page-id-32 page-slug-home-2">
+
+
+
+	
+
+	<div id="content" class="content-area">
+
+
+		<main id="main" class="main-content">
+			<div class="content-wrapper">
+				<div class="page-content">
+
+				
+
+
+
+
+
+					<div class="wp-block-mailpoet-blocks-container brand-gradient making-email-better">
+						
+						
+
+
+
+
+
+
+						<div class="wp-block-columns has-2-columns happiness-score-block pull-up">
+							<div class="wp-block-column">
+								<p class="happiness-score" data-ghostkit-sr="fade-up;distance:150px"><mark>90%</mark>
+								</p>
+								<p>123</p>
+							</div>
+							<div class="wp-block-column">
+								<p class="happiness-score" data-ghostkit-sr="fade-up;distance:150px"><mark>90%</mark>
+								</p>
+								<p>123</p>
+							</div>
+							<div class="wp-block-column">
+								<p class="happiness-score" data-ghostkit-sr="fade-up;distance:150px"><mark>90%</mark>
+								</p>
+								<p>123</p>
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="wp-block-mailpoet-blocks-container logos">
+						<figure class="wp-block-image ghostkit-custom-Z1vpKmb" data-ghostkit-sr="fade-up"><img
+								decoding="async" width="315" height="151"
+								src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/12/1b-sap.png?resize=315%2C151&#038;ssl=1"
+								alt class="wp-image-8578 jetpack-lazy-image" data-recalc-dims="1"
+								data-lazy-src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/12/1b-sap.png?resize=315%2C151&amp;is-pending-load=1#038;ssl=1"
+								srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img
+									data-lazy-fallback="1" decoding="async" loading="lazy" width="315" height="151"
+									src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/12/1b-sap.png?resize=315%2C151&#038;ssl=1"
+									alt="" class="wp-image-8578" data-recalc-dims="1" /></noscript></figure>
+
+
+
+						<figure class="wp-block-image" data-ghostkit-sr="fade-up"><img decoding="async"
+								src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/2-decath.png?ssl=1"
+								alt="Decathlon Logo" class="wp-image-8415 jetpack-lazy-image" data-recalc-dims="1"
+								data-lazy-src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/2-decath.png?ssl=1&amp;is-pending-load=1"
+								srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img
+									data-lazy-fallback="1" decoding="async"
+									src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/2-decath.png?ssl=1"
+									alt="Decathlon Logo" class="wp-image-8415" data-recalc-dims="1" /></noscript>
+						</figure>
+
+
+
+						<figure class="wp-block-image" data-ghostkit-sr="fade-up"><img decoding="async" width="310"
+								height="148"
+								src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/12/1b-tripadvisor.png?resize=310%2C148&#038;ssl=1"
+								alt class="wp-image-8580 jetpack-lazy-image" data-recalc-dims="1"
+								data-lazy-src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/12/1b-tripadvisor.png?resize=310%2C148&amp;is-pending-load=1#038;ssl=1"
+								srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img
+									data-lazy-fallback="1" decoding="async" loading="lazy" width="310" height="148"
+									src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/12/1b-tripadvisor.png?resize=310%2C148&#038;ssl=1"
+									alt="" class="wp-image-8580" data-recalc-dims="1" /></noscript></figure>
+
+
+
+						<figure class="wp-block-image" data-ghostkit-sr="fade-up"><img decoding="async" width="460"
+								height="220"
+								src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/4-alaska.png?resize=460%2C220&#038;ssl=1"
+								alt="Alaska Logo" class="wp-image-752 jetpack-lazy-image" data-recalc-dims="1"
+								data-lazy-src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/4-alaska.png?resize=460%2C220&amp;is-pending-load=1#038;ssl=1"
+								srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img
+									data-lazy-fallback="1" decoding="async" loading="lazy" width="460" height="220"
+									src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/4-alaska.png?resize=460%2C220&#038;ssl=1"
+									alt="Alaska Logo" class="wp-image-752" data-recalc-dims="1" /></noscript></figure>
+
+
+
+						<figure class="wp-block-image" data-ghostkit-sr="fade-up"><img decoding="async" width="230"
+								height="110"
+								src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/5-dhl.png?resize=230%2C110&#038;ssl=1"
+								alt="DHL Logo" class="wp-image-748 jetpack-lazy-image" data-recalc-dims="1"
+								data-lazy-src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/5-dhl.png?resize=230%2C110&amp;is-pending-load=1#038;ssl=1"
+								srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img
+									data-lazy-fallback="1" decoding="async" loading="lazy" width="230" height="110"
+									src="https://i0.wp.com/www.mailpoet.com/wp-content/uploads/2018/11/5-dhl.png?resize=230%2C110&#038;ssl=1"
+									alt="DHL Logo" class="wp-image-748" data-recalc-dims="1" /></noscript></figure>
+					</div>
+
+
+				</div><!-- .page-content -->
+			</div>
+		</main><!-- #main -->
+
+
+	</div><!-- #content -->
+
+	<div class="signup-form-block content-wrapper">
+		<h2 class="signup-form-title">Sign Up to our <mark>Newsletter</mark></h2>
+		<p>
+			Join 63,662 subscribers & get original tips and tricks delivered to your inbox each month. </p>
+
+
+		<div class="
+    mailpoet_form_popup_overlay
+      "></div>
+		<div id="mailpoet_form_1" class="
+      mailpoet_form
+      mailpoet_form_shortcode
+      mailpoet_form_position_
+      mailpoet_form_animation_
+    ">
+
+			<style type="text/css">
+				#mailpoet_form_1 .mailpoet_form {}
+
+				#mailpoet_form_1 .mailpoet_paragraph {}
+
+				#mailpoet_form_1 .mailpoet_segment_label,
+				#mailpoet_form_1 .mailpoet_text_label,
+				#mailpoet_form_1 .mailpoet_textarea_label,
+				#mailpoet_form_1 .mailpoet_select_label,
+				#mailpoet_form_1 .mailpoet_radio_label,
+				#mailpoet_form_1 .mailpoet_checkbox_label,
+				#mailpoet_form_1 .mailpoet_list_label,
+				#mailpoet_form_1 .mailpoet_date_label {}
+
+				#mailpoet_form_1 .mailpoet_text,
+				#mailpoet_form_1 .mailpoet_textarea,
+				#mailpoet_form_1 .mailpoet_select,
+				#mailpoet_form_1 .mailpoet_date_month,
+				#mailpoet_form_1 .mailpoet_date_day,
+				#mailpoet_form_1 .mailpoet_date_year,
+				#mailpoet_form_1 .mailpoet_date {}
+
+				#mailpoet_form_1 .mailpoet_text,
+				#mailpoet_form_1 .mailpoet_textarea {}
+
+				#mailpoet_form_1 .mailpoet_checkbox {}
+
+				#mailpoet_form_1 .mailpoet_submit input {}
+
+				#mailpoet_form_1 .mailpoet_divider {}
+
+				#mailpoet_form_1 .mailpoet_message {}
+
+				#mailpoet_form_1 .mailpoet_validate_success {}
+
+				#mailpoet_form_1 .mailpoet_validate_error {}
+
+				#mailpoet_form_1 {
+					;
+				}
+
+				#mailpoet_form_1 .mailpoet_message {
+					margin: 0;
+					padding: 0 20px;
+				}
+
+				#mailpoet_form_1 .mailpoet_paragraph.last {
+					margin-bottom: 0
+				}
+
+				@media (max-width: 500px) {
+					#mailpoet_form_1 {
+						background-image: none;
+					}
+				}
+
+				@media (min-width: 500px) {
+					#mailpoet_form_1 .last .mailpoet_paragraph:last-child {
+						margin-bottom: 0
+					}
+				}
+
+				@media (max-width: 500px) {
+					#mailpoet_form_1 .mailpoet_form_column:last-child .mailpoet_paragraph:last-child {
+						margin-bottom: 0
+					}
+				}
+			</style>
+
+			<form target="_self" method="post"
+				action="https://www.mailpoet.com/wp-admin/admin-post.php?action=mailpoet_subscription_form"
+				class="mailpoet_form mailpoet_form_form mailpoet_form_shortcode" novalidate data-delay=""
+				data-exit-intent-enabled="" data-font-family="" data-cookie-expiration-time="">
+				<input type="hidden" name="data[form_id]" value="1" />
+				<input type="hidden" name="token" value="2920ecc4ea" />
+				<input type="hidden" name="api_version" value="v1" />
+				<input type="hidden" name="endpoint" value="subscribers" />
+				<input type="hidden" name="mailpoet_method" value="subscribe" />
+
+				<label class="mailpoet_hp_email_label" style="display: none !important;">Please leave this field
+					empty<input type="email" name="data[email]" /></label>
+				<div class="mailpoet_paragraph"><label for="form_first_name_1" class="mailpoet-screen-reader-text"
+						data-automation-id="form_first_name_label">Name <span
+							class="mailpoet_required">*</span></label><input type="text" autocomplete="given-name"
+						class="mailpoet_text" id="form_first_name_1"
+						name="data[form_field_OTkzYTA5ZWEzZDE2X2ZpcnN0X25hbWU=]" title="Name" value=""
+						data-automation-id="form_first_name" placeholder="Name *"
+						data-parsley-names='[&quot;Please specify a valid name.&quot;,&quot;Addresses in names are not permitted, please add your name instead.&quot;]'
+						data-parsley-required="true" data-parsley-errors-container=".mailpoet_error_first_name_"
+						data-parsley-required-message="This field is required." /></div>
+				<div class="mailpoet_paragraph"><label for="form_email_1" class="mailpoet-screen-reader-text"
+						data-automation-id="form_email_label">Email <span
+							class="mailpoet_required">*</span></label><input type="email" autocomplete="email"
+						class="mailpoet_text" id="form_email_1" name="data[form_field_YzA3NzYzNWQxZjA1X2VtYWls]"
+						title="Email" value="" data-automation-id="form_email" placeholder="Email *"
+						data-parsley-required="true" data-parsley-minlength="6" data-parsley-maxlength="150"
+						data-parsley-type-message="This value should be a valid email."
+						data-parsley-errors-container=".mailpoet_error_email_"
+						data-parsley-required-message="This field is required." /></div>
+				<div class="mailpoet_recaptcha" data-sitekey="6Lesv6MdAAAAAI_qw0rG7a8Sgazbd1DgHUXKluvI"
+					data-size="invisible">
+					<div class="mailpoet_recaptcha_container"></div>
+					<noscript>
+						<div>
+							<div class="mailpoet_recaptcha_noscript_container">
+								<div>
+									<iframe
+										src="https://www.google.com/recaptcha/api/fallback?k=6Lesv6MdAAAAAI_qw0rG7a8Sgazbd1DgHUXKluvI"
+										frameborder="0" scrolling="no">
+									</iframe>
+								</div>
+							</div>
+							<div class="mailpoet_recaptcha_noscript_input">
+								<textarea id="g-recaptcha-response" name="data[recaptcha]" class="g-recaptcha-response">
+            </textarea>
+							</div>
+						</div>
+					</noscript>
+					<input class="mailpoet_recaptcha_field" type="hidden" name="recaptchaWidgetId">
+				</div>
+				<div class="mailpoet_paragraph"><input type="submit" class="mailpoet_submit" value="Subscribe"
+						data-automation-id="subscribe-submit-button" style="border-color:transparent;" /><span
+						class="mailpoet_form_loading"><span class="mailpoet_bounce1"></span><span
+							class="mailpoet_bounce2"></span><span class="mailpoet_bounce3"></span></span></div>
+
+				<div class="mailpoet_message">
+					<p class="mailpoet_validate_success" style="display:none;">Great! Check your inbox to confirm your
+						subscription.
+					</p>
+					<p class="mailpoet_validate_error" style="display:none;"> </p>
+				</div>
+			</form>
+
+		</div>
+
+	</div>
+
+	<div class="mailpoet-privacy-banner hidden" id="mailpoet-privacy-banner">
+		<div class="mailpoet-privacy-banner__content-wrapper">
+			<div class="mailpoet-privacy-banner__content-title">
+				Use of your personal data
+			</div>
+			<div class="mailpoet-privacy-banner__content">
+				<div class="mailpoet-privacy-banner__content-text">
+					We and our partners process your personal data (such as browsing data, IP Addresses, cookie
+					information,
+					and other unique identifiers) based on your consent and/or our legitimate interest to optimize our
+					website,
+					marketing activities, and your user experience.
+				</div>
+				<div class="mailpoet-privacy-banner__content-buttons">
+					<button type="button" class="mailpoet-button is-secondary" id="customize-cookies">Customize</button>
+					<Button type="button" class="mailpoet-button is-primary" id="accept-all-cookies">Accept all</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mailpoet-modal mailpoet-customize-privacy-modal" id="mailpoet-customize-privacy-modal"
+		aria-hidden="true">
+		<div>
+			<div class="mailpoet-modal__dialog" role="dialog">
+				<div class="mailpoet-modal__body">
+					<header class="mailpoet-modal__header">
+						<h2>Customize</h2>
+						<button type="button" class="mailpoet-modal__button--close"></button>
+					</header>
+					<div class="mailpoet-modal__main">
+						<div class="mailpoet-customize-privacy-content">
+							Your privacy is critically important to us. We and our partners use, store,
+							and process your personal data to optimize our website such as by improving
+							security or conducting analytics, marketing activities to help deliver relevant
+							marketing or content, and your user experience such as by remembering your account name,
+							language settings, or cart information, where applicable. You can customize your cookie
+							settings below.
+							Learn more in our
+							<a target="__blank" href="https://automattic.com/privacy/">Privacy Policy</a> and <a
+								target="__blank" href="https://automattic.com/cookies/">Cookie Policy</a>.
+						</div>
+						<div class="mailpoet-customize-privacy-content">
+							<div class="mailpoet-customize-privacy-checkbox mailpoet-customize-privacy-always-active">
+								<label class="mailpoet-checkbox is-disabled" for="checkbox-control-required">
+									<input id="checkbox-control-required" class="mailpoet-checkbox__input"
+										type="checkbox" checked="checked" disabled="disabled">
+									<svg class="mailpoet-checkbox__mark" viewBox="0 0 20 20"
+										xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none">
+										<rect x="0" y="0" width="20" height="20" rx="1.5" fill="#fe5301"></rect>
+										<path d="M13.7508 6.88957L9.19601 13.0152L6.55488 11.0514" stroke="#fff"
+											stroke-width="2" stroke-linecap="square"></path>
+									</svg>
+									<span class="mailpoet-checkbox__label">Required</span>
+								</label>
+								<span class="mailpoet-customize-privacy-always-active-text">Always active</span>
+								<i class="fa fa-chevron-down" id="more-privacy-content"></i>
+							</div>
+							<p class="mailpoet-customize-privacy-text" id="mailpoet-customize-privacy-text">
+								These cookies are essential for our websites and services to perform basic functions and
+								are necessary for us to operate certain features.
+								These include those required to allow registered users to authenticate and perform
+								account-related functions,
+								store preferences set by users such as account name, language, and location, and ensure
+								our services are operating properly.
+							</p>
+						</div>
+						<div class="mailpoet-customize-privacy-content">
+							<div class="mailpoet-customize-privacy-checkbox">
+								<label class="mailpoet-checkbox" for="checkbox-control-analytics">
+									<input id="checkbox-control-analytics" class="mailpoet-checkbox__input"
+										type="checkbox">
+									<svg class="mailpoet-checkbox__mark" viewBox="0 0 20 20"
+										xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none">
+										<rect x="0" y="0" width="20" height="20" rx="1.5" fill="#fe5301"></rect>
+										<path d="M13.7508 6.88957L9.19601 13.0152L6.55488 11.0514" stroke="#fff"
+											stroke-width="2" stroke-linecap="square"></path>
+									</svg>
+									<span class="mailpoet-checkbox__label">Analytics</span>
+								</label>
+							</div>
+							<p>
+								These cookies allow us to optimize performance by collecting information on how users
+								interact with our websites.
+							</p>
+						</div>
+						<div class="mailpoet-customize-privacy-content">
+							<div class="mailpoet-customize-privacy-checkbox">
+								<label class="mailpoet-checkbox" for="checkbox-control-advertising">
+									<input id="checkbox-control-advertising" class="mailpoet-checkbox__input"
+										type="checkbox">
+									<svg class="mailpoet-checkbox__mark" viewBox="0 0 20 20"
+										xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none">
+										<rect x="0" y="0" width="20" height="20" rx="1.5" fill="#fe5301"></rect>
+										<path d="M13.7508 6.88957L9.19601 13.0152L6.55488 11.0514" stroke="#fff"
+											stroke-width="2" stroke-linecap="square">
+
+										</path>
+									</svg>
+									<span class="mailpoet-checkbox__label">Advertising</span>
+								</label>
+							</div>
+							<p>
+								These cookies are set by us and our advertising partners to provide you with relevant
+								content and to understand that content’s effectiveness.
+							</p>
+						</div>
+					</div>
+					<div class="mailpoet-modal__footer">
+						<button type="button" class="mailpoet-button is-primary" id="save-cookies">
+							Save preferences
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="colophon" class="site-footer">
+		<div class="footer-menu">
+			<ul id="footer-menu" class="menu menu-footer">
+				<li class="menu-item footer-menu-header">
+					<a href="https://www.mailpoet.com" id="mailpoet-symbol">
+						<span class="screen-reader-text">Mailpoet home link</span><svg
+							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.02 156.4">
+							<title>MailPoet</title>
+							<g id="Layer_2" data-name="Layer 2">
+								<g id="Layer_1-2" data-name="Layer 1">
+									<path
+										d="M37.71,89.1c3.5,0,5.9-.8,7.2-2.3a8,8,0,0,0,2-5.4V35.7l17,45.1a12.68,12.68,0,0,0,3.7,5.4c1.6,1.3,4,2,7.2,2a12.54,12.54,0,0,0,5.9-1.4,8.41,8.41,0,0,0,3.9-5l18.1-50V81a8.53,8.53,0,0,0,2.1,6.1c1.4,1.4,3.7,2.2,6.9,2.2,3.5,0,5.9-.8,7.2-2.3a8,8,0,0,0,2-5.4V8.7a7.48,7.48,0,0,0-3.3-6.6c-2.1-1.4-5-2.1-8.6-2.1a19.3,19.3,0,0,0-9.4,2,11.63,11.63,0,0,0-5.1,6.8L74.91,67.1,54.41,8.4a12.4,12.4,0,0,0-4.5-6.2c-2.1-1.5-5-2.2-8.8-2.2a16.51,16.51,0,0,0-8.9,2.1c-2.3,1.5-3.5,3.9-3.5,7.2V80.8c0,2.8.7,4.8,2,6.2C32.21,88.4,34.41,89.1,37.71,89.1Z" />
+									<path
+										d="M149,116.6l-2.4-1.9a7.4,7.4,0,0,0-9.4.3,19.65,19.65,0,0,1-12.5,4.6h-21.4A37.08,37.08,0,0,0,77,130.5l-1.1,1.2-1.1-1.1a37.25,37.25,0,0,0-26.3-10.9H27a19.59,19.59,0,0,1-12.4-4.6,7.28,7.28,0,0,0-9.4-.3l-2.4,1.9A7.43,7.43,0,0,0,0,122.2a7.14,7.14,0,0,0,2.4,5.7A37.28,37.28,0,0,0,27,137.4h21.6a19.59,19.59,0,0,1,18.9,14.4v.2c.1.7,1.2,4.4,8.5,4.4s8.4-3.7,8.5-4.4v-.2a19.59,19.59,0,0,1,18.9-14.4H125a37.28,37.28,0,0,0,24.6-9.5,7.42,7.42,0,0,0,2.4-5.7A7.86,7.86,0,0,0,149,116.6Z" />
+								</g>
+							</g>
+						</svg></a>
+				</li>
+				<li id="menu-item-8597"
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8597 nav-link">
+					<a href="#"><span>Company</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.48 6.43">
+							<title>Chevron</title>
+							<g id="Layer_2" data-name="Layer 2">
+								<g id="Layer_2-2" data-name="Layer 2">
+									<path
+										d="M9,.44a1.49,1.49,0,0,0-2.12,0L4.74,2.62,2.56.44A1.5,1.5,0,0,0,.44,2.56L4,6.13a1,1,0,0,0,1.41,0L9,2.56A1.51,1.51,0,0,0,9,.44Z" />
+								</g>
+							</g>
+						</svg></a>
+					<ul class="sub-menu">
+						<li id="menu-item-8601"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8601"><a
+								href="https://www.mailpoet.com/about-us/"><span>About us</span></a></li>
+						<li id="menu-item-8603"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8603"><a
+								href="https://www.mailpoet.com/support/"><span>Contact us</span></a></li>
+						<li id="menu-item-8604"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8604"><a
+								href="https://twitter.com/mail_poet"><span>Follow us on Twitter</span></a></li>
+						<li id="menu-item-8616"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8616"><a
+								target="_blank" rel="noopener" href="https://github.com/mailpoet/mailpoet"><span>On
+									GitHub</span></a></li>
+					</ul>
+				</li>
+				<li id="menu-item-8598"
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8598 nav-link">
+					<a href="#"><span>Switch</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.48 6.43">
+							<title>Chevron</title>
+							<g id="Layer_2" data-name="Layer 2">
+								<g id="Layer_2-2" data-name="Layer 2">
+									<path
+										d="M9,.44a1.49,1.49,0,0,0-2.12,0L4.74,2.62,2.56.44A1.5,1.5,0,0,0,.44,2.56L4,6.13a1,1,0,0,0,1.41,0L9,2.56A1.51,1.51,0,0,0,9,.44Z" />
+								</g>
+							</g>
+						</svg></a>
+					<ul class="sub-menu">
+						<li id="menu-item-8605"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8605"><a
+								href="https://www.mailpoet.com/switch-to-mailpoet/"><span>Switch to MailPoet</span></a>
+						</li>
+						<li id="menu-item-12767"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12767"><a
+								href="https://www.mailpoet.com/mailpoet-vs-mailchimp/"><span>MailPoet vs
+									Mailchimp</span></a></li>
+						<li id="menu-item-11680"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11680"><a
+								href="https://www.mailpoet.com/faq-mailpoet-performance/"><span>Performance
+									FAQ</span></a></li>
+						<li id="menu-item-8610"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8610"><a
+								href="https://www.mailpoet.com/wordpress-email-delivery-infrastructure/"><span>Deliverability
+									for WordPress</span></a></li>
+					</ul>
+				</li>
+				<li id="menu-item-8599"
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8599 nav-link">
+					<a href="#"><span>Legal</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.48 6.43">
+							<title>Chevron</title>
+							<g id="Layer_2" data-name="Layer 2">
+								<g id="Layer_2-2" data-name="Layer 2">
+									<path
+										d="M9,.44a1.49,1.49,0,0,0-2.12,0L4.74,2.62,2.56.44A1.5,1.5,0,0,0,.44,2.56L4,6.13a1,1,0,0,0,1.41,0L9,2.56A1.51,1.51,0,0,0,9,.44Z" />
+								</g>
+							</g>
+						</svg></a>
+					<ul class="sub-menu">
+						<li id="menu-item-8609"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8609"><a
+								target="_blank" rel="noopener"
+								href="https://kb.mailpoet.com/article/246-guide-to-conform-to-gdpr"><span>GDPR
+									Compliant</span></a></li>
+						<li id="menu-item-14342"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14342"><a
+								href="https://wordpress.com/tos/"><span>Terms and Conditions</span></a></li>
+						<li id="menu-item-8607"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8607"><a
+								href="https://www.mailpoet.com/anti-spam-policy/"><span>Anti-Spam Policy</span></a></li>
+						<li id="menu-item-14343"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14343"><a
+								href="https://automattic.com/privacy/?utm_medium=automattic_referred&#038;utm_source=mpcom_footer"><span>Privacy
+									Policy</span></a></li>
+						<li id="menu-item-16650"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16650"><a
+								href="https://automattic.com/privacy/?utm_medium=automattic_referred&#038;utm_source=mpcom_footer#us-privacy-laws"><span>Privacy
+									Notice for California Users</span></a></li>
+						<li id="menu-item-14801"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14801"><a
+								href="https://www.mailpoet.com/support-policy/"><span>Support Policy</span></a></li>
+						<li id="menu-item-16526"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16526"><a
+								href="/do-not-sell-or-share-my-personal-information"><span>Do Not Sell or Share My
+									Personal Information</span></a></li>
+					</ul>
+				</li>
+				<li id="menu-item-8600"
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8600 nav-link">
+					<a href="#"><span>Resources</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.48 6.43">
+							<title>Chevron</title>
+							<g id="Layer_2" data-name="Layer 2">
+								<g id="Layer_2-2" data-name="Layer 2">
+									<path
+										d="M9,.44a1.49,1.49,0,0,0-2.12,0L4.74,2.62,2.56.44A1.5,1.5,0,0,0,.44,2.56L4,6.13a1,1,0,0,0,1.41,0L9,2.56A1.51,1.51,0,0,0,9,.44Z" />
+								</g>
+							</g>
+						</svg></a>
+					<ul class="sub-menu">
+						<li id="menu-item-16770"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16770"><a
+								href="https://www.mailpoet.com/logo/"><span>Logo</span></a></li>
+						<li id="menu-item-8613"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8613"><a
+								target="_blank" rel="noopener"
+								href="https://kb.mailpoet.com"><span>Documentation</span></a></li>
+						<li id="menu-item-11707"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11707"><a
+								href="https://feedback.mailpoet.com/"><span>Feature requests</span></a></li>
+						<li id="menu-item-10191"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10191"><a
+								href="https://www.mailpoet.com/blog/guide-wordpress-newsletter-plugin/"><span>Ultimate
+									guide to emails in WP</span></a></li>
+						<li id="menu-item-11160"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11160"><a
+								href="https://www.mailpoet.com/mailpoet-affiliate-program/"><span>Affiliate
+									program</span></a></li>
+						<li id="menu-item-10672"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10672"><a
+								href="https://www.mailpoet.com/plugins/"><span>Plugin integrations</span></a></li>
+						<li id="menu-item-10817"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10817"><a
+								href="https://www.mailpoet.com/wordpress-hosts-we-recommend/"><span>Hosts we
+									recommend</span></a></li>
+						<li id="menu-item-8615"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8615"><a
+								target="_blank" rel="noopener"
+								href="https://wordpress.org/plugins/mailpoet/"><span>Download on WP.org</span></a></li>
+						<li id="menu-item-10362"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10362"><a
+								href="https://status.mailpoet.com/"><span>Status</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="site-info">
+			<div class="wrapper">
+				<div class="copy">
+					<p class="footer-text">Proudly open source. Built exclusively with love for WordPress. Since 2011
+					</p>
+					<p class="copyright"><strong><mark>2023 MailPoet</mark></strong></p>
+				</div>
+				<div class="a8c">
+					<a target='_blank' title='An Automattic oeuvre'
+						href='https://automattic.com/?utm_medium=automattic_referred&utm_source=mpcom_footer'>An <span
+							class='logo'></span> oeuvre</a>
+				</div>
+			</div>
+		</div><!-- .site-info -->
+
+	</footer><!-- #colophon -->
+
+	<div id="modal" class="modal" aria-expanded="false" tabindex="-1">
+		<div class="modal-wrapper">
+			<header class="modal-header">
+				<p class="sub-navigation"><a href="#desktop" class="active">Desktop</a><a href="#mobile">Mobile</a></p>
+				<button class="modal-close round-button button-secondary" aria-controls="modal"
+					aria-expanded="false"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 12"
+						style="enable-background:new 0 0 12 12;" xml:space="preserve">
+						<title>Menu close</title>
+						<g id="Layer_2_1_">
+							<g id="Layer_2-2">
+								<path d="M10.9,8.8L8.1,6l2.8-2.8c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0L6,3.9L3.2,1.1c-0.6-0.6-1.5-0.6-2.1,0
+					s-0.6,1.5,0,2.1L3.9,6L1.1,8.8c-0.6,0.6-0.6,1.5,0,2.1c0.6,0.6,1.5,0.6,2.1,0L6,8.1l2.8,2.8c0.6,0.6,1.5,0.6,2.1,0
+					C11.5,10.4,11.5,9.4,10.9,8.8z" />
+							</g>
+						</g>
+					</svg><span class="screen-reader-text">Close modal</span></button>
+			</header>
+			<div class="modal-content">
+				<span class="screen-reader-text">Loading...</span>
+				<span class="refresh-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+						<rect x="0" fill="none" width="16" height="16" />
+						<g>
+							<path
+								d="M3.8 3.8C2.7 4.9 2 6.3 2 8c0 3 2.2 5.4 5 5.9v-2.1c-1.7-.4-3-2-3-3.9 0-1.1.5-2.1 1.2-2.8L7 7V2H2l1.8 1.8zM14 8c0-3-2.2-5.4-5-5.9v2.1c1.7.4 3 2 3 3.9 0 1.1-.5 2.1-1.2 2.8L9.1 9.1 9 9v5h5l-1.8-1.8C13.3 11.1 14 9.7 14 8z" />
+						</g>
+					</svg></span>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function atomicBlocksShare(url, title, w, h) {
+			var left = (window.innerWidth / 2) - (w / 2);
+			var top = (window.innerHeight / 2) - (h / 2);
+			return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top=' + top + ', left=' + left);
+		}
+	</script>
+	<link rel='stylesheet' id='mailpoet_public-css'
+		href='https://www.mailpoet.com/wp-content/plugins/mailpoet/assets/dist/css/mailpoet-public.9cd759ea.css?ver=6.2.2'
+		type='text/css' media='all' />
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&#038;ver=132249e245926ae3e188'
+		id='jetpack-photon-js'></script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/atomic-blocks/dist/assets/js/dismiss.js?ver=1646060486'
+		id='atomic-blocks-dismiss-js-js'></script>
+	<script type='text/javascript' id='ghostkit-helper-js-extra'>
+		/* <![CDATA[ */
+		var ghostkitVariables = { "themeName": "New MailPoet", "settings": { "icon_pack_ghostkit": false, "icon_pack_font-awesome": false }, "disabledBlocks": [], "media_sizes": { "sm": 576, "md": 768, "lg": 992, "xl": 1200 }, "timezone": "UTC+00:00", "googleMapsAPIKey": "", "googleMapsAPIUrl": "https:\/\/maps.googleapis.com\/maps\/api\/js?v=3.exp&language=en", "googleMapsLibrary": { "url": "https:\/\/www.mailpoet.com\/wp-content\/plugins\/ghostkit\/assets\/vendor\/gmaps\/gmaps.min.js?ver=0.4.25" }, "googleReCaptchaAPISiteKey": "", "googleReCaptchaAPISecretKey": "", "sidebars": [], "icons": [], "shapes": [], "fonts": [], "customTypographyList": [], "variants": { "accordion": { "default": { "title": "Default" } }, "accordion_item": { "default": { "title": "Default" } }, "alert": { "default": { "title": "Default" } }, "button_wrapper": { "default": { "title": "Default" } }, "button": { "default": { "title": "Default" } }, "carousel": { "default": { "title": "Default" } }, "carousel_slide": { "default": { "title": "Default" } }, "changelog": { "default": { "title": "Default" } }, "counter_box": { "default": { "title": "Default" } }, "divider": { "default": { "title": "Default" } }, "gist": { "default": { "title": "Default" } }, "google_maps": { "default": { "title": "Default" } }, "grid": { "default": { "title": "Default" } }, "grid_column": { "default": { "title": "Default" } }, "icon_box": { "default": { "title": "Default" } }, "instagram": { "default": { "title": "Default" } }, "pricing_table": { "default": { "title": "Default" } }, "pricing_table_item": { "default": { "title": "Default" } }, "progress": { "default": { "title": "Default" } }, "tabs": { "default": { "title": "Default" } }, "tabs_tab": { "default": { "title": "Default" } }, "testimonial": { "default": { "title": "Default" } }, "twitter": { "default": { "title": "Default" } }, "video": { "default": { "title": "Default" } } }, "admin_url": "https:\/\/www.mailpoet.com\/wp-admin\/", "admin_templates_url": "https:\/\/www.mailpoet.com\/wp-admin\/edit.php?post_type=ghostkit_template" };
+/* ]]> */
+	</script>
+	<script type='text/javascript' id='ghostkit-helper-js-before'>
+		if (ghostkitVariables) { ghostkitVariables.allowPluginColorPalette = true; }
+		if (ghostkitVariables) { ghostkitVariables.allowPluginCustomizer = true; }
+	</script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/ghostkit/assets/js/helper.min.js?ver=2.25.0'
+		id='ghostkit-helper-js'></script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/ghostkit/assets/vendor/scrollreveal-4-0-7/scrollreveal.min.js?ver=4.0.7'
+		id='scrollreveal-js'></script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/ghostkit/assets/js/main.min.js?ver=2.25.0'
+		id='ghostkit-js'></script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/ghostkit/assets/vendor/swiper/swiper-bundle.min.js?ver=8.4.0'
+		id='swiper-js'></script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/ghostkit/gutenberg/blocks/carousel/frontend.min.js?ver=2.25.0'
+		id='ghostkit-block-carousel-js'></script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-lazy-images/dist/intersection-observer.js?minify=false&#038;ver=83ec8aa758f883d6da14'
+		id='jetpack-lazy-images-polyfill-intersectionobserver-js'></script>
+	<script type='text/javascript' id='jetpack-lazy-images-js-extra'>
+		/* <![CDATA[ */
+		var jetpackLazyImagesL10n = { "loading_warning": "Images are still loading. Please cancel your print and try again." };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-lazy-images/dist/lazy-images.js?minify=false&#038;ver=2e29137590434abf5fbe'
+		id='jetpack-lazy-images-js'></script>
+	<script defer type='text/javascript' src='https://stats.wp.com/e-202331.js' id='jetpack-stats-js'></script>
+	<script type='text/javascript' id='jetpack-stats-js-after'>
+		_stq = window._stq || [];
+		_stq.push(["view", { v: 'ext', blog: '29437367', post: '32', tz: '0', srv: 'www.mailpoet.com', hp: 'atomic', ac: '13', amp: '0', j: '1:12.4-beta' }]);
+		_stq.push(["clickTrackerInit", "29437367", "32"]);
+	</script>
+	<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=explicit&#038;ver=6.2.2'
+		id='mailpoet_recaptcha-js'></script>
+	<script type='text/javascript' id='mailpoet_public-js-extra'>
+		/* <![CDATA[ */
+		var MailPoetForm = { "ajax_url": "https:\/\/www.mailpoet.com\/wp-admin\/admin-ajax.php", "is_rtl": "" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/mailpoet/assets/dist/js/public.js?ver=4.22.0'
+		id='mailpoet_public-js'></script>
+	<script type='text/javascript' id='mailpoet_public-js-after'>
+		function initMailpoetTranslation() {
+			if (typeof MailPoet !== 'undefined') {
+				MailPoet.I18n.add('ajaxFailedErrorMessage', 'An error has happened while performing a request, please try again later.')
+			} else {
+				setTimeout(initMailpoetTranslation, 250);
+			}
+		}
+		setTimeout(initMailpoetTranslation, 250);
+	</script>
+	<script type='text/javascript' id='ghostkit-icons-fallback-js-extra'>
+		/* <![CDATA[ */
+		var ghostkitIconsFallback = { "fas fa-arrow-left": "<svg class=\"ghostkit-svg-icon ghostkit-svg-icon-fa\" aria-hidden=\"true\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 448 512\"><path fill=\"currentColor\" d=\"M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z\"><\/path><\/svg>", "fas fa-arrow-right": "<svg class=\"ghostkit-svg-icon ghostkit-svg-icon-fa\" aria-hidden=\"true\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 448 512\"><path fill=\"currentColor\" d=\"M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z\"><\/path><\/svg>", "fas fa-angle-left": "<svg class=\"ghostkit-svg-icon ghostkit-svg-icon-fa\" aria-hidden=\"true\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z\"><\/path><\/svg>", "fas fa-angle-right": "<svg class=\"ghostkit-svg-icon ghostkit-svg-icon-fa\" aria-hidden=\"true\" role=\"img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 256 512\"><path fill=\"currentColor\" d=\"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z\"><\/path><\/svg>" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='https://www.mailpoet.com/wp-content/plugins/ghostkit/assets/js/icons-fallback.min.js?ver=2.25.0'
+		id='ghostkit-icons-fallback-js'></script>
+
+</body>
+
+</html>
+<!--
+	generated in 1.044 seconds
+	129480 bytes batcached for 300 seconds
+-->

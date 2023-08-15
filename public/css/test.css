@@ -1,0 +1,328 @@
+.elementor-3480 .elementor-element.elementor-element-52a666aa > .elementor-container {
+    min-height: 65vh;
+}
+.elementor-3480
+    .elementor-element.elementor-element-4b217c51:not(.elementor-motion-effects-element-type-background)
+    > .elementor-widget-wrap,
+.elementor-3480
+    .elementor-element.elementor-element-4b217c51
+    > .elementor-widget-wrap
+    > .elementor-motion-effects-container
+    > .elementor-motion-effects-layer {
+    background-image: url("email.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+.elementor-3480 .elementor-element.elementor-element-4b217c51 > .elementor-element-populated,
+.elementor-3480
+    .elementor-element.elementor-element-4b217c51
+    > .elementor-element-populated
+    > .elementor-background-overlay,
+.elementor-3480 .elementor-element.elementor-element-4b217c51 > .elementor-background-slideshow {
+    border-radius: 15px 0px 0px 15px;
+}
+.elementor-3480 .elementor-element.elementor-element-4b217c51 > .elementor-element-populated {
+    transition:
+        background 0.3s,
+        border 0.3s,
+        border-radius 0.3s,
+        box-shadow 0.3s;
+}
+.elementor-3480
+    .elementor-element.elementor-element-4b217c51
+    > .elementor-element-populated
+    > .elementor-background-overlay {
+    transition:
+        background 0.3s,
+        border-radius 0.3s,
+        opacity 0.3s;
+}
+.elementor-3480 .elementor-element.elementor-element-4fd6b30f {
+    --spacer-size: 50px;
+}
+.elementor-bc-flex-widget
+    .elementor-3480
+    .elementor-element.elementor-element-f8846c4.elementor-column
+    .elementor-widget-wrap {
+    align-items: center;
+}
+.elementor-3480
+    .elementor-element.elementor-element-f8846c4.elementor-column.elementor-element[data-element_type="column"]
+    > .elementor-widget-wrap.elementor-element-populated {
+    align-content: center;
+    align-items: center;
+}
+.elementor-3480 .elementor-element.elementor-element-f8846c4 > .elementor-element-populated {
+    padding: 50px 50px 50px 50px;
+}
+.elementor-3480 .elementor-element.elementor-element-648abded > .elementor-element-populated {
+    padding: 0px 0px 20px 0px;
+}
+.elementor-3480 .elementor-element.elementor-element-16dc7a45 .elementor-heading-title {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.1em;
+    letter-spacing: -1.3px;
+}
+.elementor-3480 .elementor-element.elementor-element-16dc7a45 {
+    width: var(--container-widget-width, 103.134%);
+    max-width: 103.134%;
+    --container-widget-width: 103.134%;
+    --container-widget-flex-grow: 0;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group {
+    padding-right: calc(10px / 2);
+    padding-left: calc(10px / 2);
+    margin-bottom: 20px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-form-fields-wrapper {
+    margin-left: calc(-10px / 2);
+    margin-right: calc(-10px / 2);
+    margin-bottom: -20px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group.recaptcha_v3-bottomleft,
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group.recaptcha_v3-bottomright {
+    margin-bottom: 0;
+}
+body.rtl
+    .elementor-3480
+    .elementor-element.elementor-element-7a9fd8de
+    .elementor-labels-inline
+    .elementor-field-group
+    > label {
+    padding-left: 3px;
+}
+body:not(.rtl)
+    .elementor-3480
+    .elementor-element.elementor-element-7a9fd8de
+    .elementor-labels-inline
+    .elementor-field-group
+    > label {
+    padding-right: 3px;
+}
+body
+    .elementor-3480
+    .elementor-element.elementor-element-7a9fd8de
+    .elementor-labels-above
+    .elementor-field-group
+    > label {
+    padding-bottom: 3px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-mark-required .elementor-field-label:after {
+    color: var(--e-global-color-f128bc1);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group > label {
+    font-family: "futura-pt", Sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 25px;
+    letter-spacing: 0px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-type-html {
+    padding-bottom: 0px;
+    font-family: "futura-pt", Sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -0.5px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group .elementor-field,
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-subgroup label {
+    font-family: "futura-pt", Sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 25px;
+    letter-spacing: 0.2px;
+}
+.elementor-3480
+    .elementor-element.elementor-element-7a9fd8de
+    .elementor-field-group:not(.elementor-field-type-upload)
+    .elementor-field:not(.elementor-select-wrapper) {
+    background-color: #ffffff00;
+    border-color: var(--e-global-color-accent);
+    border-width: 3px 3px 3px 3px;
+    border-radius: 11px 11px 11px 11px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group .elementor-select-wrapper select {
+    background-color: #ffffff00;
+    border-color: var(--e-global-color-accent);
+    border-width: 3px 3px 3px 3px;
+    border-radius: 11px 11px 11px 11px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-field-group .elementor-select-wrapper::before {
+    color: var(--e-global-color-accent);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-button {
+    font-family: "futura-pt", Sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    border-style: solid;
+    border-width: 3px 3px 3px 3px;
+    border-radius: 11px 11px 11px 11px;
+    padding: 12px 14px 11px 14px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .e-form__buttons__wrapper__button-next {
+    background-color: var(--e-global-color-f128bc1);
+    color: var(--e-global-color-primary);
+    border-color: var(--e-global-color-f128bc1);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-button[type="submit"] {
+    background-color: var(--e-global-color-f128bc1);
+    color: var(--e-global-color-primary);
+    border-color: var(--e-global-color-f128bc1);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-button[type="submit"] svg * {
+    fill: var(--e-global-color-primary);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .e-form__buttons__wrapper__button-previous {
+    color: #ffffff;
+    border-color: var(--e-global-color-primary);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .e-form__buttons__wrapper__button-next:hover {
+    background-color: #be583600;
+    color: var(--e-global-color-primary);
+    border-color: var(--e-global-color-primary);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-button[type="submit"]:hover {
+    background-color: #be583600;
+    color: var(--e-global-color-primary);
+    border-color: var(--e-global-color-primary);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-button[type="submit"]:hover svg * {
+    fill: var(--e-global-color-primary);
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .e-form__buttons__wrapper__button-previous:hover {
+    color: #ffffff;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-message {
+    font-family: "futura-pt", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.5px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-message.elementor-message-success {
+    color: #1f6f0e;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-message.elementor-message-danger {
+    color: #ff0000;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de .elementor-message.elementor-help-inline {
+    color: #ff0000;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de {
+    --e-form-steps-indicators-spacing: 20px;
+    --e-form-steps-indicator-padding: 30px;
+    --e-form-steps-indicator-inactive-secondary-color: #ffffff;
+    --e-form-steps-indicator-active-secondary-color: #ffffff;
+    --e-form-steps-indicator-completed-secondary-color: #ffffff;
+    --e-form-steps-divider-width: 1px;
+    --e-form-steps-divider-gap: 10px;
+}
+.elementor-3480 .elementor-element.elementor-element-7a9fd8de > .elementor-widget-container {
+    margin: 0px 0px 0px 0px;
+}
+.elementor-3480 .elementor-element.elementor-element-51fa4704 > .elementor-widget-container {
+    margin: 0px 0px -20px 0px;
+}
+.elementor-3480 .elementor-element.elementor-element-57c9bc4 .plus-cursor-follow-circle {
+    max-width: 100px;
+    width: 100px;
+    max-height: 100px;
+    height: 100px;
+}
+.elementor-3480 .elementor-element.elementor-element-57c9bc4 .plus-cursor-follow-circle {
+    z-index: 1;
+}
+#elementor-popup-modal-3480 .dialog-message {
+    width: 758px;
+    height: auto;
+}
+#elementor-popup-modal-3480 {
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    background-color: #cee2f3;
+}
+#elementor-popup-modal-3480 .dialog-close-button {
+    display: flex;
+    font-size: 24px;
+}
+#elementor-popup-modal-3480 .dialog-widget-content {
+    animation-duration: 0.7s;
+    background-color: var(--e-global-color-b23664b);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, 0.2);
+}
+#elementor-popup-modal-3480 .dialog-close-button i {
+    color: var(--e-global-color-f128bc1);
+}
+#elementor-popup-modal-3480 .dialog-close-button svg {
+    fill: var(--e-global-color-f128bc1);
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+    .elementor-3480 .elementor-element.elementor-element-4b217c51 {
+        width: 40%;
+    }
+    .elementor-3480 .elementor-element.elementor-element-f8846c4 {
+        width: 60%;
+    }
+}
+@media (max-width: 1024px) {
+    .elementor-3480
+        .elementor-element.elementor-element-4b217c51:not(.elementor-motion-effects-element-type-background)
+        > .elementor-widget-wrap,
+    .elementor-3480
+        .elementor-element.elementor-element-4b217c51
+        > .elementor-widget-wrap
+        > .elementor-motion-effects-container
+        > .elementor-motion-effects-layer {
+        background-position: -79px 0px;
+    }
+    .elementor-3480 .elementor-element.elementor-element-4fd6b30f {
+        --spacer-size: 184px;
+    }
+    .elementor-3480 .elementor-element.elementor-element-f8846c4 > .elementor-element-populated {
+        padding: 30px 30px 30px 30px;
+    }
+    #elementor-popup-modal-3480 .dialog-message {
+        width: 700px;
+    }
+}
+@media (max-width: 767px) {
+    .elementor-3480
+        .elementor-element.elementor-element-4b217c51:not(.elementor-motion-effects-element-type-background)
+        > .elementor-widget-wrap,
+    .elementor-3480
+        .elementor-element.elementor-element-4b217c51
+        > .elementor-widget-wrap
+        > .elementor-motion-effects-container
+        > .elementor-motion-effects-layer {
+        background-position: -4px -28px;
+        background-size: 368px auto;
+    }
+    .elementor-3480 .elementor-element.elementor-element-4b217c51 > .elementor-element-populated,
+    .elementor-3480
+        .elementor-element.elementor-element-4b217c51
+        > .elementor-element-populated
+        > .elementor-background-overlay,
+    .elementor-3480 .elementor-element.elementor-element-4b217c51 > .elementor-background-slideshow {
+        border-radius: 15px 15px 0px 0px;
+    }
+    .elementor-3480 .elementor-element.elementor-element-4fd6b30f {
+        --spacer-size: 160px;
+    }
+    .elementor-3480 .elementor-element.elementor-element-f8846c4 > .elementor-element-populated {
+        padding: 20px 20px 20px 20px;
+    }
+    .elementor-3480 .elementor-element.elementor-element-648abded > .elementor-element-populated {
+        padding: 0px 0px 15px 0px;
+    }
+    #elementor-popup-modal-3480 .dialog-message {
+        width: 350px;
+    }
+}

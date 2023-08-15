@@ -1,0 +1,191 @@
+{
+    "banner": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Banner Section",
+        "content": {
+            "heading": "text"
+        },
+        "element": {
+            "images": {
+                "image": {
+                    "size": "150x150"
+                }
+            },
+            "name": "text",
+            "modal": false
+        }
+    },
+    "blog": {
+        "builder": true,
+        "name": "Blog Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "images": {
+                "image": {
+                    "size": "1000x700",
+                    "thumb": "400x280"
+                }
+            },
+            "title": "text",
+            "description": "textarea-nic",
+            "modal": false
+        }
+    },
+    "contact_us": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Contact Us",
+        "content": {
+            "Address_1": "text",
+            "Address_2": "text",
+            "contact_number_1": "text",
+            "contact_number_2": "text",
+            "email_address": "text",
+            "map": "textarea-nic"
+        }
+    },
+    "about": {
+        "builder": true,
+        "name": "About Us",
+        "content": {
+            "images": {
+                "image_1": {
+                    "size": "250x260"
+                },
+                "image_2": {
+                    "size": "250x260"
+                },
+                "image_3": {
+                    "size": "250x260"
+                },
+                "image_4": {
+                    "size": "250x260"
+                }
+            },
+            "heading": "text",
+            "subheading": "text",
+            "description": "textarea-nic"
+        }
+    },
+    "service": {
+        "builder": true,
+        "name": "Service Section",
+        "content": {
+            "images": {
+                "video_thumb": {
+                    "size": "615x630"
+                }
+            },
+            "heading": "text",
+            "subheading": "text",
+            "video_url": "text"
+        },
+        "element": {
+            "name":"text",
+            "mota":"text",
+            "icon": "icon",
+            "modal": true
+        }
+    },
+    "testimonial": {
+        "builder": true,
+        "name": "Testimonial Section",
+        "content": {
+            "images": {
+                "background_image": {
+                    "size": "1800x900"
+                }
+            },
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "images": {
+                "image": {
+                    "size": "150x150"
+                }
+            },
+            "name": "text",
+            "designation": "text",
+            "modal": false
+        }
+    },
+    "subscribe": {
+        "builder": true,
+        "name": "Subscribe Section",
+        "content": {
+            "images": {
+                "image": {
+                    "size": "1800x300"
+                }
+            },
+            "heading": "text",
+            "button_title": "text"
+        }
+    },
+    "social_icon": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Social Icons",
+        "element": {
+            "title": "text",
+            "social_icon": "icon",
+            "url": "text",
+            "modal": true
+        }
+    },
+
+    "footer": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Footer Section",
+        "content": {
+            "images": {
+                "image": {
+                    "size": "1800x600"
+                }
+            },
+            "description": "textarea"
+        }
+    },
+    "featured_room": {
+        "builder": true,
+        "no_selection": false,
+        "name": "Featured Rooms",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        }
+    },
+    "faq": {
+        "builder": true,
+        "name": "FAQ Section",
+
+        "element": {
+            "question": "text",
+            "answer": "textarea",
+            "stt": "test",
+            "modal": true
+        }
+    },
+    "service_list": {
+        "builder": true,
+        "no_selection": false,
+        "name": "list service",
+        "element": {
+            "images": {
+                "image": {
+                    "size": "1800x600"
+                }
+            },
+            "title": "text",
+            "description": "textarea-nic",
+            "modal": true
+        }
+    }
+
+}
